@@ -4,9 +4,10 @@ services:
   backend-service-go:
       image: epalaciol/backend-service:latest
       ports: 
-        - "4001:4001"
+        - 4001:4001
   frontend-service-vue:
       image: epalaciol/frontend-service:latest
       ports: 
-        - "1080:80"
-      
+        - 1080:80
+      depends_on:
+        - backend-service-go
